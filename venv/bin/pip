@@ -1,4 +1,4 @@
-#!/Users/arina/Desktop/django4/venv/bin/python3
+#!/Users/arina/Desktop/django4/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

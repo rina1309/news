@@ -16,6 +16,7 @@ from pathlib import Path
 from django.urls import reverse_lazy
 from django.core.cache import cache
 
+
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'courses.apps.CoursesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -164,3 +166,12 @@ REST_FRAMEWORK = {
 }
 
 ASGI_APPLICATION = 'educa.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+    },
+}
